@@ -1,0 +1,42 @@
+plugins {
+	id "com.github.johnrengelman.shadow" version "4.0.3"
+	id "java"
+	id "eclipse"
+}
+
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+archivesBaseName = "Stunning Adventure"
+version = "1.0"
+
+repositories {
+	maven {
+		name = "Fabric"
+		url = "https://maven.fabricmc.net"
+	}
+}
+
+dependencies {
+	shadow "net.fabricmc:tiny-remapper:0.1.0.22:fat"
+}
+
+sourceSets {
+	main {
+		java {
+			srcDir "src"
+		}
+		resources {
+			srcDir "resources"
+		}
+	}
+}
+
+jar {
+	manifest {
+		attributes(
+			"Main-Class": "com.chocohead.stunture.Main"
+		)
+	}
+}
